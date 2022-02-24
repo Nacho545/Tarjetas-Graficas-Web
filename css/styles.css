@@ -1,0 +1,176 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --accent-color: #641BFF;
+    --heading-font-family: 'Poppins', sans-serif;
+    --body-font-family: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #F8F9FB;
+    background-image: url(../imagenes/fondo.png);
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--body-font-family);
+}
+
+.comparacion-precio {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin: 1rem;
+    max-width: 70vw;
+}
+
+.precio-columna{
+    background-color: white;
+    box-shadow: 0 7px 30px rgba(52, 31, 97, 0.1);
+    padding: 2rem;
+    flex-grow: 1;
+    flex-basis: 0;    
+    max-width: 275px;
+    border-radius: 8px;
+}
+
+.precio-columna.popular {
+    background-color: var(--accent-color);
+    box-shadow: 0 7px 30px rgba(52, 13, 135, 0.3);
+    color: white;
+    margin-top: -1.5rem;
+    padding-top: 3.5rem;
+    margin-bottom: -1.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.precio-columna:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.precio-columna:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.cabecera-precio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--heading-font-family);
+    font-weight: bold;
+}
+
+.precio {
+    font-size: 3.5rem;
+    display: flex;
+}
+
+.simbolo-dolar {
+    font-size: 1.5rem;
+    margin-top: .5rem;
+    margin-right: .25rem;
+}
+
+.por-mes {
+    font-size: .75rem;
+    align-self: flex-end;
+    margin-bottom: 1.1rem;
+    text-transform: uppercase;
+}
+
+.nombre-plan {
+    text-transform: uppercase;
+    font-size: .9rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.divisor {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.precio-columna.popular .divisor {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.caracteristica {
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+    margin-top: .7rem;
+    font-size: 13px;
+}
+
+.caracteristica.inactiva {
+    color: #999;
+    text-decoration-line: line-through;
+}
+
+.div-comprar{
+    display: flex;
+    flex-direction: column;
+}
+
+.boton-comprar {
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+    width: 100%;
+    padding: .75rem 1rem;
+    cursor: pointer;
+    font-family: var(--heading-font-family);
+    border-radius: 4px;
+    margin-top: 3rem;
+    transition: 100ms;
+    transform: scale(1);
+}
+
+.boton-comprar a {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+
+.precio-columna.popular .boton-comprar {
+    background-color: white;
+    color: var(--accent-color);
+}
+
+.boton-comprar:hover {
+    transform: scale(1.1);
+    text-transform: uppercase;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .comparacion-precio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        width: 100%;
+        margin: 1rem;
+        max-width: 70vw;
+    }
+
+    .precio-columna:first-child {
+        border-radius: 8px;
+    }
+    
+    .precio-columna:last-child {
+        border-radius: 8px;
+    }
+}
